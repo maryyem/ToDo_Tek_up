@@ -1,1 +1,37 @@
-
+<ion-header [translucent]="true">
+    <ion-toolbar color="primary">
+      <ion-title>
+        TodoApp
+      </ion-title>
+     
+      <ion-buttons slot="end"> 
+        <ion-button (click)="logOut()" color="primary" fill="outline">
+          <ion-icon name="log-out"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content [fullscreen]="true">
+    <div class="bg-img">
+    <h1>Today,</h1>
+    <h5> {{ currentDate }} </h5>
+    </div>
+   <ion-tabs>
+  
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="todo/{{id}}">
+        <ion-icon name="today-outline"></ion-icon>      
+        <ion-label>To Do</ion-label>
+        <ion-badge>{{ nb }}</ion-badge>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="done/{{id}}">
+        <ion-icon name="checkmark-done-outline"></ion-icon>      
+        <ion-label>Done</ion-label>
+      </ion-tab-button>
+  
+    </ion-tab-bar>
+  </ion-tabs>
+    
+  
+  </ion-content>
