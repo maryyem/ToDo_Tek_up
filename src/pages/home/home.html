@@ -1,0 +1,38 @@
+
+
+//dans cette page on va ajouter les tasks/effacer/update les task... : TODO///
+
+<ion-header>
+	<ion-navbar>
+		<ion-title>Meryem's To-do List</ion-title>
+	</ion-navbar>
+</ion-header>
+<ion-content padding>
+	<ion-item>
+        //cette partie on va ajouter un task///
+		<ion-input type="text" [(ngModel)]="taskName" placeholder="Enter task"/>
+		<div class="item-note" item-end>
+			<button ion-button (click)="addTask()"><ion-icon name="add"></ion-icon></button>
+		</div>
+	</ion-item>
+	<div padding>
+		<ion-list>
+			<ion-item *ngFor="let todo of taskList">
+				{{todo}}
+			</ion-item>
+		</ion-list>
+	</div>
+</ion-content>
+/////mise a jour d'un  task et effacer task :////
+
+<ion-item *ngFor="let todo of taskList; let i = index">
+	{{todo}}
+	<div class="item-note" item-end>
+		<button ion-button clear (click)="updateTask(i)">
+			<ion-icon name="create"></ion-icon>
+		</button>
+		<button ion-button clear (click)="deleteTask(i)">
+			<ion-icon name="trash"></ion-icon>
+		</button>
+	</div>
+</ion-item>
